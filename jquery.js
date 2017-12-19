@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   var c = "b";
+   //git pull thanh cong
    var computer;
    var user;
    var box1 = true;
