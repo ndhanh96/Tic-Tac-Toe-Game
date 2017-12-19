@@ -1,0 +1,91 @@
+body {
+   background: #4db8ff;
+}
+
+.opening {
+   text-align: center;
+}
+
+#chooseX {
+   cursor: pointer;
+}
+
+#chooseO {
+   cursor: pointer;
+}
+
+.square {
+   box-sizing: border-box;
+   width: 360px;
+   height: 360px;
+   background: #4db8ff;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+}
+
+.box-tick {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 10px solid #006bb3;
+   background: #4db8ff;
+   width: 120px;
+   height: 120px;
+   float: left;
+   /* padding: 5px solid #black; */
+}
+
+.content-tick-by-player {
+   /* word-wrap: break-word; */
+   font-size: 6em;
+   /* margin: 0; */
+   /* padding: 20px; */
+   margin-bottom: 0;
+   font-family: 'Gloria Hallelujah', cursive;
+}
+
+#box1 {
+   border: none;
+}
+
+#box2 {
+   /* border: 5px solid #006bb3; */
+   border-top: none;
+   border-bottom: none;
+}
+
+#box3 {
+   border: none;
+}
+
+#box6 {
+   border-right: none;
+   border-left: none;
+}
+
+#box4 {
+   border-right: none;
+   border-left: none;
+   /* margin-bottom: -5px; */
+}
+
+#box5 {
+   /* border:  */
+}
+
+#box7 {
+   border: none;
+}
+
+#box8 {
+   border-top: none;
+   border-bottom: none;
+}
+
+#box9 {
+   border: none;
+}
