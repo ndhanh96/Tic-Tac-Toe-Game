@@ -1,6 +1,5 @@
 $(document).ready(function() {
-   //git pull thanh cong
-   //git push thanh cong lan 1
+   // test choi cho
    var computer;
    var user;
    var box1 = true;
