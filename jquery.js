@@ -1,5 +1,8 @@
 $(document).ready(function() {
+<<<<<<< HEAD
    // test choi cho
+=======
+>>>>>>> d0c5bdc8af145484017e7504f6a926cc84f1882b
    var computer;
    var user;
    var box1 = true;
