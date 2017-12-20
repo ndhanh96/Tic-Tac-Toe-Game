@@ -63,25 +63,31 @@ $(document).ready(function() {
    function canUserClick(where, box) {
       if (box) {
          $(where).text(user);
-         checkTieGame();
+         // checkTieGame();
       }
    }
 
-   function compClick() {
+   function checkPlayerMove(where, box, numb) {
+      $(where).text(computer);
+      box = false;
+      checkArr(numb);
+   }
 
+   function compClick() {
+      var player = arrOfPlayer[arrOfPlayer.length - 1];
       setTimeout(function() {
          if (arrOfPlayer[0] == 1) {
-            $("#content-box5").text(computer);
-            box5 = false;
-            checkArr(5);
-            if (arrOfPlayer[arrOfPlayer.length - 1] == 4) {
-               $("#content-box7").text(computer);
-               box7 = false;
-               checkArr(7);
-            } else if (arrOfPlayer[arrOfPlayer.length - 1] == 2) {
-               $("#content-box3").text(computer);
-               box3 = false;
-               checkArr(3);
+            checkPlayerMove("#content-box5",box5,5);
+            if (player == 4) {
+               checkPlayerMove("#content-box7",box7,7);
+            } else if (player == 2) {
+               checkPlayerMove("#content-box3",box3,3);
+            } else if (player == 3 || player == 6) {
+               checkPlayerMove("#content-box2",box2,2);
+            } else if(arrOfPlayer[arrOfPlayer.length -2] == 3) {
+               if(player == 6 || player == 7 || player == 9) {
+                  checkPlayerMove("#content-box8",box8,8);
+               }
             }
          }
 
