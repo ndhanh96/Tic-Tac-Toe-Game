@@ -48,6 +48,12 @@ $(document).ready(function() {
       $(".box-tick").show();
    });
 
+   function checkTieGame() {
+      if (box1 == box2 == box3 == box4 == box5 == box6 == box7 == box8 == box9 == false) {
+         alert("Tie Game");
+      }
+   }
+
    function checkArr(number) {
       if (!arrOfComp.includes(number)) {
          arrOfComp.push(number);
@@ -57,6 +63,7 @@ $(document).ready(function() {
    function canUserClick(where, box) {
       if (box) {
          $(where).text(user);
+         checkTieGame();
       }
    }
 
