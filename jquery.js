@@ -12,6 +12,7 @@ $(document).ready(function() {
    var box9 = true;
 
    var user_click;
+   var tie_game = false;
 
    var arrToWin = [
       [1, 2, 3],
@@ -49,8 +50,8 @@ $(document).ready(function() {
    });
 
    function checkTieGame() {
-      if (box1 == box2 == box3 == box4 == box5 == box6 == box7 == box8 == box9 == false) {
-         alert("Tie Game");
+      if(arrOfPlayer.length == 5) {
+         tie_game = true;
       }
    }
 
@@ -63,7 +64,7 @@ $(document).ready(function() {
    function canUserClick(where, box) {
       if (box) {
          $(where).text(user);
-         // checkTieGame();
+         checkTieGame();
       }
    }
 
@@ -78,15 +79,18 @@ $(document).ready(function() {
       setTimeout(function() {
          if (arrOfPlayer[0] == 1) {
             checkPlayerMove("#content-box5",box5,5);
-            if (player == 4) {
-               checkPlayerMove("#content-box7",box7,7);
-            } else if (player == 2) {
+            if (arrOfPlayer[1] == 2) {
                checkPlayerMove("#content-box3",box3,3);
-            } else if (player == 3 || player == 6) {
-               checkPlayerMove("#content-box2",box2,2);
-            } else if(arrOfPlayer[arrOfPlayer.length -2] == 3) {
-               if(player == 6 || player == 7 || player == 9) {
-                  checkPlayerMove("#content-box8",box8,8);
+               if(arrOfPlayer[2] == 4 || arrOfPlayer[2] == 6 || arrOfPlayer[2] == 9 || arrOfPlayer[2] == 8) {
+                  checkPlayerMove("#content-box7",box7,7);
+               } else if (arrOfPlayer[2] == 7) {
+                  checkPlayerMove("#content-box4",box4,4);
+                  if(arrOfPlayer[3] == 8 || arrOfPlayer[3] == 9) {
+                     checkPlayerMove("#content-box6",box6,6);
+                  } else if (arrOfPlayer[3] == 6) {
+                     box9 = false;
+                     checkPlayerMove("#content-box9",box9,9);
+                  }
                }
             }
          }
@@ -158,6 +162,7 @@ $(document).ready(function() {
       arrOfPlayer.push(8);
       compClick();
       box8 = false;
+      // alert("" + box1 + box2 + box3 + box4 + box5 + box6 + box7 + box8 + box9);
    });
    $("#box9").click(function() {
       canUserClick("#content-box9", box9);
