@@ -36,7 +36,11 @@ $(document).ready(function() {
       [3, 5, 7],
       [3, 4, 5, 6],
       [3, 6, 8, 9],
-      [3, 7, 8, 9]
+      [3, 7, 8, 9],
+      [1, 4, 5, 6],
+      [1, 5, 7, 9],
+      [1, 4, 5, 9],
+      [2, 5, 6, 8]
    ];
    var newArr = [];
    //convert arrToWin elements to string
@@ -159,23 +163,81 @@ $(document).ready(function() {
             findMove(2,3,7,4);
          }
       } else if (arrOfPlayer[0] == 2) {
-         checkPlayerMove(3);
+         checkPlayerMove(5);
          if(arrOfPlayer[1] == 1) {
-            checkPlayerMove(6);
-            findMove(9,5,7,4);
+            checkPlayerMove(3);
+            findMove(7,4,6,8);
+         } else if (arrOfPlayer[1] == 3) {
+            checkPlayerMove(1);
+            findMove(9,6,4,8);
          } else if (arrOfPlayer[1] == 4) {
+            checkPlayerMove(7);
+            findMove(3,1,9,6);
+         } else if (arrOfPlayer[1] == 6) {
             checkPlayerMove(9);
-            findMove(6,5,7,1);
-         } else if (arrOfPlayer[1] == 5) {
+            findMove(1,3,7,4);
+         } else if (arrOfPlayer[1] == 7) {
+            checkPlayerMove(1);
+            findMove(9,8,3,4);
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove(3);
+            findMove(7,9,1,6);
+         } else if (arrOfPlayer[1] == 9) {
+            checkPlayerMove(3);
+            findMove(7,8,4,6);
+         }
+      } else if (arrOfPlayer[0] == 3) {
+         checkPlayerMove(5);
+         if (arrOfPlayer[1] == 1) {
+            checkPlayerMove(2);
+            findMove(8,4,6,9);
+         } else if (arrOfPlayer[1] == 2) {
+            checkPlayerMove(1);
+            findMove(9,6,4,8);
+         } else if (arrOfPlayer[1] == 4) {
+            checkPlayerMove(1);
+            findMove(9,6,2,7);
+         } else if (arrOfPlayer[1] == 6) {
+            checkPlayerMove(9);
+            findMove(1,2,8,4);
+         } else if (arrOfPlayer[1] == 7) {
+            checkPlayerMove(4);
+            findMove(6,9,1,2);
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove(9);
+            findMove(1,2,4,7);
+         } else if (arrOfPlayer[1] == 9) {
+            checkPlayerMove(6);
+            findMove(4,2,8,7);
+         }
+      } else if (arrOfPlayer[0] == 4) {
+         checkPlayerMove(5);
+         if (arrOfPlayer[1] == 1) {
+            checkPlayerMove(7);
+            findMove(3,2,8,6);
+         } else if (arrOfPlayer[1] == 2) {
+            checkPlayerMove(7);
+            findMove(3,1,9,6);
+         } else if (arrOfPlayer[1] == 3) {
+            checkPlayerMove(1);
+            findMove(9,6,2,7);
+         } else if (arrOfPlayer[1] == 6) {
+            checkPlayerMove(7);
+            findMove(3,9,1,8);
+         } else if (arrOfPlayer[1] == 7) {
+            checkPlayerMove(1);
+            findMove(9,8,2,6);
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove(1);
+            findMove(9,7,3,6);
+         } else if (arrOfPlayer[1] == 9) {
+            checkPlayerMove(7);
+            findMove(3,6,1,2);
+         }
+      } else if (arrOfPlayer[0] == 5) {
+         checkPlayerMove(1);
+         if (arrOfPlayer[1] == 2) {
             checkPlayerMove(8);
-            if (arrOfPlayer[2] == 1) {
-               checkPlayerMove(9);
-               if (arrOfPlayer[3] != 6 && typeof arrOfPlayer[3] == "number") {
-                  checkPlayerMove(6);
-               } else if (arrOfPlayer[3] == 6) {
-                  checkPlayerMove(7);
-               }
-            }
          }
       }
       setTimeout(function() {
