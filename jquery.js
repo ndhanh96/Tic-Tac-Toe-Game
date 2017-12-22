@@ -18,7 +18,14 @@ $(document).ready(function() {
       [1, 2, 3],
       [1, 4, 7],
       [1, 5, 9],
+      [2, 3, 5, 7],
+      [2, 4, 5 ,6],
+      [2, 4, 5, 8],
       [2, 5, 8],
+      [2, 5, 7 ,8],
+      [3, 4, 5, 7],
+      [3, 5, 6, 9],
+      [3, 5, 7, 9],
       [3, 5, 7],
       [3, 6, 9],
       [4, 5, 6],
@@ -107,8 +114,6 @@ $(document).ready(function() {
    }
 
    function compClick() {
-      // var player = arrOfPlayer[arrOfPlayer.length - 1];
-      // user_clicked = false;
       if (arrOfPlayer[0] == 1) {
          checkPlayerMove("#content-box5",5);
          if (arrOfPlayer[1] == 2) {
@@ -123,13 +128,69 @@ $(document).ready(function() {
                   checkPlayerMove("#content-box9",9);
                }
             }
+         } else if (arrOfPlayer[1] == 3) {
+            checkPlayerMove("#content-box2",2);
+            if(arrOfPlayer[2] == 4 || arrOfPlayer[2] == 6 || arrOfPlayer[2] == 7 || arrOfPlayer[2] == 9 ) {
+               checkPlayerMove("#content-box8",8);
+            } else if(arrOfPlayer[2] == 8) {
+               checkPlayerMove("#content-box4",4);
+               if(arrOfPlayer[3] == 7 || arrOfPlayer[3] == 9) {
+                  checkPlayerMove("#content-box6",6);
+               } else if (arrOfPlayer[3] == 6) {
+                  checkPlayerMove("#content-box9",9);
+               }
+            }
+         } else if (arrOfPlayer[1] == 4) {
+            checkPlayerMove("#content-box7",7);
+            if(typeof arrOfPlayer[2] == "number" && arrOfPlayer[2] != 3) {
+               checkPlayerMove("#content-box3",3);
+            } else if (arrOfPlayer[2] == 3) {
+               checkPlayerMove("#content-box2",2);
+               if (typeof arrOfPlayer[3] == "number" && arrOfPlayer[3] != 8) {
+                  checkPlayerMove("#content-box8",8);
+               } else if(arrOfPlayer[3] == 8) {
+                  checkPlayerMove("#content-box9",9);
+               }
+            }
+         } else if (arrOfPlayer[1] == 6) {
+            checkPlayerMove("#content-box2",2);
+            if(arrOfPlayer[2] != 8 && typeof arrOfPlayer[2] == "number") {
+               checkPlayerMove("#content-box8",8);
+            } else if (arrOfPlayer[2] == 8) {
+               checkPlayerMove("#content-box7",7);
+               if(arrOfPlayer[3] != 3 && typeof arrOfPlayer[3] == "number") {
+                  checkPlayerMove("#content-box3",3);
+               } else if (arrOfPlayer[3] == 3) {
+                  checkPlayerMove("#content-box4",4);
+               }
+            }
+         } else if (arrOfPlayer[1] == 7) {
+            checkPlayerMove("#content-box4",4);
+            if (arrOfPlayer[2] != 6 && typeof arrOfPlayer[2] == "number") {
+               checkPlayerMove("#content-box6",6);
+            } else if (arrOfPlayer[2] == 6 ) {
+               checkPlayerMove("#content-box8",8);
+               if(arrOfPlayer[3] != 2 && typeof arrOfPlayer[3] == "number") {
+                  checkPlayerMove("#content-box2",2);
+               } else if (arrOfPlayer[3] == 2) {
+                  checkPlayerMove("#content-box3",3);
+               }
+            }
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove("#content-box9",9);
+            if(arrOfPlayer[2] == 2) {
+               checkPlayerMove("#content-box3",3);
+               if(arrOfPlayer[3] != 6 && typeof arrOfPlayer[3] == "number") {
+                  checkPlayerMove("#content-box6",6);
+               } else if (arrOfPlayer[3] == 6) {
+                  checkPlayerMove("#content-box7",7);
+               }
+            }
          }
       }
       setTimeout(function() {
          calculate();
       },1000)
-
-
    }
 
    function calculate() {
