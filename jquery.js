@@ -292,19 +292,142 @@ $(document).ready(function() {
             findMove(3,1,9,4);
          } else if (arrOfPlayer[1] == 3) {
             checkPlayerMove(5);
-            findMove(6,9,1,2); //logic error
+            if(arrOfPlayer[2] == 1) {
+               checkPlayerMove(2);
+               findMove2(9,6);
+            } else if (arrOfPlayer[2] == 2) {
+               checkPlayerMove(1);
+               findMove2(4,6)
+            } else if (arrOfPlayer[2] == 4) {
+               checkPlayerMove(9);
+               findMove2(1,2);
+            } else if (arrOfPlayer[2] == 6) {
+               checkPlayerMove(9);
+               findMove2(1,2);
+            } else if (arrOfPlayer[2] == 9) {
+               checkPlayerMove(6);
+               findMove2(4,1);
+            }
          } else if (arrOfPlayer[1] == 4) {
-            checkPlayerMove(1);
-            findMove(9,8,2,6);
+            checkPlayerMove(2);
+            if(arrOfPlayer[2] == 1) {
+               checkPlayerMove(6);
+               findMove2(5,9);
+            } else if(arrOfPlayer[2] == 3) {
+               checkPlayerMove(9);
+               findMove2(6,5);
+            } else if(arrOfPlayer[2] == 5) {
+               checkPlayerMove(6);
+               findMove2(1,9);
+            } else if(arrOfPlayer[2] == 6) {
+               checkPlayerMove(5);
+               findMove2(3,9);
+            } else if(arrOfPlayer[2] == 9) {
+               checkPlayerMove(3);
+               findMove2(5,1);
+            }
+         } else if (arrOfPlayer[1] == 5) {
+            checkPlayerMove(2);
+            if(arrOfPlayer[2] == 1) {
+               checkPlayerMove(9);
+               findMove2(4,7);
+            } else if(arrOfPlayer[2] == 3) {
+               checkPlayerMove(4);
+               findMove2(1,9);
+            } else if(arrOfPlayer[2] == 4) {
+               checkPlayerMove(6);
+               findMove2(9,1);
+            } else if(arrOfPlayer[2] == 6) {
+               checkPlayerMove(4);
+               findMove2(1,9);
+            } else if(arrOfPlayer[2] == 9) {
+               checkPlayerMove(1);
+               findMove2(3,4);
+            }
          } else if (arrOfPlayer[1] == 6) {
-            checkPlayerMove(8);
-            findMove(2,3,1,4);
-         } else if (arrOfPlayer[1] == 8) {
-            checkPlayerMove(9);
-            findMove(1,4,6,2);
+            checkPlayerMove(1);
+            findMove(4,5,9,3);
          } else if (arrOfPlayer[1] == 9) {
+            checkPlayerMove(4);
+            findMove(1,5,3,6);
+         }
+      } else if (arrOfPlayer[0] == 9) {
+         checkPlayerMove(5);
+         if (arrOfPlayer[1] == 1) {
+            checkPlayerMove(2);
+            findMove(8,7,3,6);
+         } else if (arrOfPlayer[1] == 2) {
+            checkPlayerMove(4);
+            findMove(6,3,7,8);
+         } else if (arrOfPlayer[1] == 3) {
+            checkPlayerMove(6);
+            findMove(4,2,8,7);
+         } else if (arrOfPlayer[1] == 4) {
+            checkPlayerMove(2);
+            findMove(8,7,3,6);
+         } else if (arrOfPlayer[1] == 6) {
+            checkPlayerMove(3);
+            findMove(7,8,2,1);
+         } else if (arrOfPlayer[1] == 7) {
             checkPlayerMove(8);
             findMove(2,4,6,3);
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove(7);
+            findMove(3,6,4,1);
+         }
+      } else if (arrOfPlayer[0] == 5) {
+         checkPlayerMove(7);
+         if (arrOfPlayer[1] == 1) {
+            checkPlayerMove(9);
+            findMove(8,2,6,4);
+         } else if (arrOfPlayer[1] == 2) {
+            checkPlayerMove(8);
+            findMove(9,1,4,6);
+         } else if (arrOfPlayer[1] == 3) {
+            checkPlayerMove(1);
+            findMove(4,6,8,2);
+         } else if (arrOfPlayer[1] == 4) {
+            checkPlayerMove(6);
+            if (arrOfPlayer[2] == 1) {
+               checkPlayerMove(9);
+               findMove2(3,8);
+            } else if (arrOfPlayer[2] == 2) {
+               checkPlayerMove(8);
+               findMove2(9,1);
+            } else if (arrOfPlayer[2] == 3) {
+               checkPlayerMove(8);
+               findMove2(9,1);
+            } else if (arrOfPlayer[2] == 8) {
+               checkPlayerMove(2);
+               findMove2(1,3);
+            } else if (arrOfPlayer[2] == 9) {
+               checkPlayerMove(1);
+               findMove2(2,8);
+            }
+         } else if (arrOfPlayer[1] == 6) {
+            checkPlayerMove(4);
+            findMove(1,9,8,2);
+         } else if (arrOfPlayer[1] == 8) {
+            checkPlayerMove(2);
+            if (arrOfPlayer[2] == 1) {
+               checkPlayerMove(9);
+               findMove2(6,4);
+            } else if (arrOfPlayer[2] == 3) {
+               checkPlayerMove(4);
+               findMove2(1,9);
+            } else if (arrOfPlayer[2] == 4) {
+               checkPlayerMove(6);
+               findMove2(1,9);
+            } else if (arrOfPlayer[2] == 6) {
+               checkPlayerMove(4);
+               findMove2(1,9);
+            } else if (arrOfPlayer[2] == 9) {
+               checkPlayerMove(1);
+               findMove2(4,3);
+            }
+         } else if (arrOfPlayer[1] == 9) {
+            checkPlayerMove(1);
+            findMove(4,6,2,8);
          }
       }
       setTimeout(function() {
@@ -324,6 +447,14 @@ $(document).ready(function() {
          }
       }
 
+   }
+
+   function findMove2(n1,n2) {
+      if(arrOfPlayer[3] != n1 && typeof arrOfPlayer[3] == "number") {
+         checkPlayerMove(n1);
+      } else if (arrOfPlayer[3] == n1) {
+         checkPlayerMove(n2);
+      }
    }
 
    function calculate() {
