@@ -4,6 +4,11 @@ body {
 
 .opening {
    text-align: center;
+   font-family: 'Pacifico', cursive;
+}
+
+.titleGame {
+   color: white;
 }
 
 #chooseX {
