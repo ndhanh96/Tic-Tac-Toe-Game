@@ -14,39 +14,9 @@ $(document).ready(function() {
    var user_clicked = false;
    var tie_game = false;
 
-   var arrToWin = [
-      [1, 2, 3],
-      [1, 3, 5, 9],
-      [1, 4, 7],
-      [1, 5, 9],
-      [2, 3, 5, 7],
-      [2, 4, 5 ,6],
-      [2, 4, 5, 8],
-      [2, 5, 8],
-      [2, 5, 7 ,8],
-      [3, 4, 5, 7],
-      [3, 5, 6, 7],
-      [3, 5, 6, 9],
-      [3, 5, 7, 8],
-      [3, 5, 7, 9],
-      [3, 5, 7],
-      [3, 6, 9],
-      [4, 5, 6],
-      [7, 8, 9],
-      [3, 5, 7],
-      [3, 4, 5, 6],
-      [3, 6, 8, 9],
-      [3, 7, 8, 9],
-      [1, 4, 5, 6],
-      [1, 5, 7, 9],
-      [1, 4, 5, 9],
-      [2, 5, 6, 8]
-   ];
    var newArr = [];
    //convert arrToWin elements to string
-   for (var i = 0; i < arrToWin.length; i++) {
-      newArr.push(JSON.stringify(arrToWin[i]));
-   }
+
    var arrOfPlayer = [];
    var arrOfComp = [];
 
@@ -238,7 +208,7 @@ $(document).ready(function() {
          checkPlayerMove(5);
          if(arrOfPlayer[1] == 1) {
             checkPlayerMove(3);
-            findMove(7,4,2,8);
+            findMove(7,8,4,2);
          } else if (arrOfPlayer[1] == 2) {
             checkPlayerMove(9);
             findMove(1,3,7,4);
@@ -456,20 +426,77 @@ $(document).ready(function() {
          checkPlayerMove(n2);
       }
    }
+   function loseOrDraw() {
+      // alert(arrOfComp);
+      setTimeout(function() {
+         //reload page
+         alert("You Lose")
+         location.reload();
+      }, 1000);
+   }
 
    function calculate() {
+      var sort = [];
       var arrOfCompCheck = "";
       arrOfComp.sort(function(a, b) {
          return a - b;
       });
-      arrOfCompCheck = JSON.stringify(arrOfComp);
-      if (newArr.includes(arrOfCompCheck)) {
-         setTimeout(function() {
-            alert("You Lose");
-            //reload page
-            location.reload();
-         }, 1000);
+      if (arrOfComp.length >= 3) {
+         if(arrOfComp[0] == 1) {
+            if(arrOfComp[1] == 2 && arrOfComp[2] == 3) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 5 && arrOfComp[2] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 4 && arrOfComp[2] == 7) {
+               loseOrDraw();
+            } else if(arrOfComp[2] == 4 && arrOfComp[3] == 7) {
+               loseOrDraw();
+            } else if(arrOfComp[2] == 5 && arrOfComp[3] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 4 && arrOfComp[3] == 7) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 5 && arrOfComp[3] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 2 && arrOfComp[2] == 5 && arrOfComp[3] == 8) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 3 && arrOfComp[2] == 6 && arrOfComp[3] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 4 && arrOfComp[2] == 5 && arrOfComp[3] == 6) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 7 && arrOfComp[2] == 8 && arrOfComp[3] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 3 && arrOfComp[2] == 5 && arrOfComp[3] == 7) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] == 2) {
+            if(arrOfComp[1] == 5 && arrOfComp[2] == 8) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] == 3) {
+            if(arrOfComp[1] == 6 && arrOfComp[2] == 9) {
+               loseOrDraw();
+            } else if(arrOfComp[1] == 5 && arrOfComp[2] == 7) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] == 4) {
+            if(arrOfComp[1] == 5 && arrOfComp[2] == 6) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] == 7) {
+            if(arrOfComp[1] == 8 && arrOfComp[2] == 9) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] < 4) {
+            if(arrOfComp[1] == 4 && arrOfComp[2] == 5 && arrOfComp[3] == 6) {
+               loseOrDraw();
+            }
+         } else if (arrOfComp[0] < 7) {
+            if(arrOfComp[1] == 7 && arrOfComp[2] == 8 && arrOfComp[3] == 9) {
+               loseOrDraw();
+            }
+         }
       }
+
    }
 
    $("#box1").click(function() {
