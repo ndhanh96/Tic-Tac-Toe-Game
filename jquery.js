@@ -1,4 +1,6 @@
 $(document).ready(function() {
+   var colorO = "#f2ebd3";
+   var colorX = "#545454";
    var computer;
    var user;
    var box1 = true;
@@ -65,7 +67,11 @@ $(document).ready(function() {
    function canUserClick(where, box, numb) {
       if (box == true && user_clicked == false) {
          whatBox(numb);
-         $(where).text(user);
+         if(user == "X") {
+            $(where).text(user).css('color', colorX);
+         } else {
+            $(where).text(user).css('color', colorO);
+         }
          arrOfPlayer.push(numb);
          checkTieGame();
          user_clicked = true;
@@ -96,7 +102,11 @@ $(document).ready(function() {
          where = "#content-box9";
       }
       setTimeout(function() {
-         $(where).text(computer);
+         if(computer == "X") {
+            $(where).text(computer).css('color', colorX);
+         } else {
+            $(where).text(computer).css('color', colorO);
+         }
       },1000);
       user_clicked = false;
       if (!arrOfComp.includes(numb)) {

@@ -1,5 +1,5 @@
 body {
-   background: #4db8ff;
+   background: #14bdac;
 }
 
 .opening {
@@ -25,7 +25,7 @@ body {
    box-sizing: border-box;
    width: 360px;
    height: 360px;
-   background: #4db8ff;
+   background: #14bdac;
    position: absolute;
    top: 0;
    bottom: 0;
@@ -38,19 +38,15 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
-   border: 10px solid #006bb3;
-   background: #4db8ff;
+   border: 10px solid #238e83;
+   background: #14bdac;
    width: 120px;
    height: 120px;
    float: left;
-   /* padding: 5px solid #black; */
 }
 
 .content-tick-by-player {
-   /* word-wrap: break-word; */
    font-size: 6em;
-   /* margin: 0; */
-   /* padding: 20px; */
    margin-bottom: 0;
    font-family: 'Gloria Hallelujah', cursive;
 }
@@ -60,7 +56,6 @@ body {
 }
 
 #box2 {
-   /* border: 5px solid #006bb3; */
    border-top: none;
    border-bottom: none;
 }
