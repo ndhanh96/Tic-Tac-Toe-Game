@@ -2,6 +2,22 @@ body {
    background: #14bdac;
 }
 
+
+
+/* Mozilla based browsers */
+::-moz-selection {
+       background-color: none;
+       color: none;
+}
+
+/* Works in Safari */
+::selection {
+       background-color: none;
+       color: none;
+}
+
+
+
 .opening {
    text-align: center;
    font-family: 'Pacifico', cursive;
