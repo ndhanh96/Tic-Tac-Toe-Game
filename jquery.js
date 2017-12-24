@@ -1,5 +1,4 @@
 $(document).ready(function() {
-   // alert("test2");
    var computer;
    var user;
    var box1 = true;
@@ -14,9 +13,6 @@ $(document).ready(function() {
 
    var user_clicked = false;
    var tie_game = false;
-
-   var newArr = [];
-   //convert arrToWin elements to string
 
    var arrOfPlayer = [];
    var arrOfComp = [];
@@ -428,7 +424,6 @@ $(document).ready(function() {
       }
    }
    function loseOrDraw() {
-      // alert(arrOfComp);
       setTimeout(function() {
          //reload page
          alert("You Lose")
@@ -437,8 +432,6 @@ $(document).ready(function() {
    }
 
    function calculate() {
-      var sort = [];
-      var arrOfCompCheck = "";
       arrOfComp.sort(function(a, b) {
          return a - b;
       });
