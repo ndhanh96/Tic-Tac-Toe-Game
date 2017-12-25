@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //kiem tra xem da push chua
     var colorO = "#f2ebd3";
     var colorX = "#545454";
     var computer;
