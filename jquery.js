@@ -14,7 +14,6 @@ $(document).ready(function() {
    var box9 = true;
 
    var user_clicked = false;
-   var tie_game = false;
 
    var arrOfPlayer = [];
    var arrOfComp = [];
