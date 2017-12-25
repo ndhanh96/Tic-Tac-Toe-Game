@@ -1,105 +1,105 @@
 body {
-   background: #14bdac;
+    background: #14bdac;
 }
-
 
 
 /* Mozilla based browsers */
+
 ::-moz-selection {
-       background-color: none;
-       color: none;
+    background-color: none;
+    color: none;
 }
+
 
 /* Works in Safari */
+
 ::selection {
-       background-color: none;
-       color: none;
+    background-color: none;
+    color: none;
 }
 
-
-
 .opening {
-   text-align: center;
-   font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
 }
 
 .titleGame {
-   color: white;
+    color: white;
 }
 
 #chooseX {
-   cursor: pointer;
-   color: white;
+    cursor: pointer;
+    color: white;
 }
 
 #chooseO {
-   cursor: pointer;
-   color: white;
+    cursor: pointer;
+    color: white;
 }
 
 .square {
-   box-sizing: border-box;
-   width: 360px;
-   height: 360px;
-   background: #14bdac;
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   margin: auto;
+    box-sizing: border-box;
+    width: 360px;
+    height: 360px;
+    background: #14bdac;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .box-tick {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border: 10px solid #238e83;
-   background: #14bdac;
-   width: 120px;
-   height: 120px;
-   float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #238e83;
+    background: #14bdac;
+    width: 120px;
+    height: 120px;
+    float: left;
 }
 
 .content-tick-by-player {
-   font-size: 6em;
-   margin-bottom: 0;
-   font-family: 'Gloria Hallelujah', cursive;
+    font-size: 6em;
+    margin-bottom: 0;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 #box1 {
-   border: none;
+    border: none;
 }
 
 #box2 {
-   border-top: none;
-   border-bottom: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 #box3 {
-   border: none;
+    border: none;
 }
 
 #box6 {
-   border-right: none;
-   border-left: none;
+    border-right: none;
+    border-left: none;
 }
 
 #box4 {
-   border-right: none;
-   border-left: none;
-   /* margin-bottom: -5px; */
+    border-right: none;
+    border-left: none;
+    /* margin-bottom: -5px; */
 }
 
 #box7 {
-   border: none;
+    border: none;
 }
 
 #box8 {
-   border-top: none;
-   border-bottom: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 #box9 {
-   border: none;
+    border: none;
 }
